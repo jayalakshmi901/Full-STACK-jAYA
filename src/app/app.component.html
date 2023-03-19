@@ -1,0 +1,58 @@
+<html>
+    
+<nav class="navbar">
+    <div id="trapezoid">
+      <a class="sub-home" href="#">Home</a>
+      <!-- <a href="#About" class="expandHome">About</a> -->
+       <div class="subnav">
+       <!-- <button class="subnavbtn">Clients<i class="fa fa-caret-down"></i></button> -->
+       <li class="nav-item"><a routerLink="/registration" class="nav-link">Registration</a></li>
+         <div class="subnav-content">
+          <div id="subnav-trapezoid">
+          </div>
+         </div>
+      </div>
+        
+      <div class="subnav">
+      <li class="nav-item"><a routerLink="/login" class="nav-link">Login</a></li>
+      <div class="subnav-content">
+        <div id="subnav-trapezoid">
+        </div>
+       </div>
+    </div>
+
+
+       <div class="subnav">
+       <li class="nav-item"><a routerLink="/employees" class="nav-link">Display Wallets</a></li>
+         <div class="subnav-content">
+          <div class="subnav-trapezoid">
+           </div>
+         </div>
+        </div>
+    </div>
+    <div class="class1">
+        <app-home></app-home>
+        <router-outlet></router-outlet>
+    </div><div class="class1">
+        <app-home></app-home>
+        <router-outlet></router-outlet>
+    </div> <!-- This is the home.component.html -->
+    
+    
+   
+  </nav>
+  </html>
+   
+<!-- <h1>Welcome to the WALLETAPP</h1> 
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+    <ul class="navbar-nav">
+      <li class="nav-item"><a routerLink="home" class="nav-link">Home</a></li>
+      <li class="nav-item"><a routerLink="/login" class="nav-link">Login</a></li>
+      <li class="nav-item"><a routerLink="/registration" class="nav-link">Registration</a></li>
+      <li class="nav-item"><a routerLink="/demo" class="nav-link">Demo</a></li>
+  
+      <li class="nav-item"><a routerLink="/employees" class="nav-link">Display Wallets</a></li>
+  
+    </ul>
+  </nav>  -->
+  <router-outlet></router-outlet>

@@ -1,0 +1,76 @@
+<!-- <p>login works!</p> -->
+
+<div class="container">
+    <h1>Login Into Your Wallet</h1>
+    <form #userForm="ngForm">
+  
+      <div class="row">
+        <div class="col-25">
+          <label for="ename">Name:</label>
+  
+        </div>
+        <div class="col-75">
+          <input type="text" [(ngModel)]="employee.name" #nameRef="ngModel" name="ename" id="ename"
+            pattern="[A-Za-z ]{3,}" title="Only chars are allowed,Min 3 char required" required>
+          <div *ngIf="nameRef.invalid && (nameRef.touched || nameRef.dirty)">
+            <p *ngIf="nameRef.errors?.['required']" class="text-danger">Name is required, cant be balnk.</p>
+            <p *ngIf="nameRef.errors?.['pattern']" class="text-danger">Name must have at least 3 chars, only chars are
+              allowed.</p>
+          </div>
+        </div>
+  
+      </div>
+  
+      <div class="row">
+  
+        <div class="col-25">
+          <label for="passwordId">Password:</label>
+        </div>
+  
+        <div class="col-75">
+          <input type="password" [(ngModel)]="employee.password" #passwordRef="ngModel" name="password" id="passwordId"
+            pattern="[a-zA-Z0-9]{8,}" required>
+  
+          <div *ngIf="passwordRef.invalid && (passwordRef.touched || passwordRef.dirty)">
+            <p *ngIf="passwordRef.errors?.['required']" class="text-danger">Password is required, cant be balnk.</p>
+            <p *ngIf="passwordRef.errors?.['pattern']" class="text-danger">Password must be at least 8 chars.</p>
+  
+          </div>
+        </div>
+  
+      </div>
+  
+      <div class="row">
+        <input type="submit" (click)="Submitform()" [disabled]="!userForm.valid" value="Submit">
+      </div>
+    </form>
+  </div>
+ 
+<!-- <html>
+<div><h1>Register Wallet </h1>
+    <form #userForm="ngForm">
+        <label for="id">ID:</label>
+        <input type="number" [(ngModel)]="employee.id" name = "id"  id="id"><br> -->
+
+        <!-- <label for="ename">UserName:           </label><br>
+        <input type="text" [(ngModel)]="employee.name" #nameRef="ngModel" name = "ename" id="ename" pattern ="[A-Za-z]{3,}" size="10" required><br>
+        <div *ngIf="nameRef.invalid && (nameRef.touched || nameRef.dirty)">
+            <p class="text-danger" *ngIf = "nameRef.errors?.['required']" >Name is needed.</p>
+            <p class="text-danger" *ngIf = "nameRef.errors?.['pattern']">atleast 3 char .</p>
+        </div>
+        <br>
+
+        <label for="esalary">Password:  </label><br>
+        <input type="password" [(ngModel)]="employee.password" #passwordRef="ngModel"name = "password"   id="password" pattern="[a-zA-Z0-9]{6,10}"  size="10"required><br>
+        <div *ngIf="passwordRef.invalid && (passwordRef.touched || passwordRef.dirty)">
+            <p class="text-danger" *ngIf = "passwordRef.errors?.['required']" >password is needed.</p>
+            <p class="text-danger" *ngIf = "passwordRef.errors?.['pattern']">password must be atleast 6 chars and maximum 10 charecter</p>
+        </div>
+        <br>
+
+        <input type="submit"(click)="displayUserform()"  value="submit">
+       
+     </form>
+
+</div>
+</html>   -->

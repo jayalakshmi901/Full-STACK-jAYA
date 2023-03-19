@@ -1,0 +1,107 @@
+<p>demo works!</p>
+<html>
+    <h3>one way DB</h3> 
+<h3>Interpollation</h3>
+{{title}}
+<h3>property binding</h3>
+<!-- <img [src]="imageSrc"> -->
+<form>
+    username:
+    <input type="text" [(ngModel)]="name" name = "firstname">
+    password:
+    <input type="text" [(ngModel)]="password" name = "password">
+    <input type="button"(click)="displayName()"
+    value="Press to login">
+  
+  
+</form>
+<div>
+    <h1>employee details</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+             <th>Salary</th>
+        </tr>
+        <tr *ngFor="let emp of employees ">
+            <td>{{emp.id}}</td>
+            <td>{{emp.name}}</td>
+            <td>{{emp.salary}}</td>
+
+        </tr>
+    </table>
+</div> 
+
+<div>
+    <h1> Angular pipes demo</h1>
+    <h3>UpperCasePipe</h3>
+  <!-- uppercase: {{title | upper}} -->
+    <h3>Custom pipes</h3>
+  <p> {{title | upper:'up'}}</p>
+</div>
+
+<h3>List of Employees</h3>
+  <p>Search</p>
+  <input type="text" [(ngModel)]="query" id="queryId" name="query">
+  <div>
+    <h1>Employee details.</h1>
+    <table>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Salary</th>
+      </tr>
+      <tr *ngFor="let emp of employees | search:query ">
+        <td>{{emp.id}}</td>
+        <td>{{emp.name}}</td>
+        <td>{{emp.salary}}</td>
+      </tr>
+    </table>
+  </div>
+
+  <h1>Sort pipe</h1>
+  <h3>List of Employees</h3>
+  <div>
+    <h1>Employee details.</h1>
+    <table>
+      <tr>
+        <th (click)="changeSortByFiled('id')">Id</th>
+        <th (click)="changeSortByFiled('name')">Name</th>
+        <th (click)="changeSortByFiled('salary')">Salary</th>
+      </tr>
+      <tr *ngFor="let emp of employees | sort : field :'desc'">
+        <td>{{emp.id}}</td>
+        <td>{{emp.name}}</td>
+        <td>{{emp.salary}}</td>
+      </tr>
+    </table>
+  </div>
+
+    
+<!-- <div><h1>Register Wallet </h1>
+    <form #userForm="ngForm">
+        <label for="id">ID:</label>
+        <input type="number" [(ngModel)]="employee.id" name = "id"  id="id"><br>
+
+        <label for="ename">Name:</label>
+        <input type="text" [(ngModel)]="employee.name" #nameRef="ngModel" name = "ename" id="ename" pattern ="[A-Za-z]{3,}" title="only" size="5" required>
+        <div *ngIf="nameRef.invalid && (nameRef.touched || nameRef.dirty)">
+            <p class="text-danger" *ngIf = "nameRef.errors?.['required']" >Name is needed.</p>
+            <p *ngIf = "nameRef.errors?.['pattern']">atleast 3 char .</p>
+        </div>
+        <br>
+
+        <label for="esalary">salary:</label>
+        <input type="number" [(ngModel)]="employee.salary" #salaryRef="ngModel"name = "esalary"   id="salaryid" min =0 required><br>
+        <div *ngIf="salaryRef.invalid && (salaryRef.touched || salaryRef.dirty)">
+            <p class="text-danger" *ngIf = "salaryRef.errors?.['required']" >salary is needed.</p>
+            <p *ngIf = "salaryRef.errors?.['pattern']">greater thab 0 .</p>
+        </div>
+        <br>
+
+        <input type="submit"(click)="displayUserform()" [disabled]="!userForm.valid" value="submit">
+    </form>
+
+</div>
+</html> -->
+    

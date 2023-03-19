@@ -1,0 +1,21 @@
+<p>updatewallet works!</p>
+ <form>
+    <!-- ID: -->
+    <!-- <input type="text" value="employee.id" disabled>  -->
+    <form>
+        Id:
+        <input type="text" [(ngModel)]="employee.id" name="id" id = "id" disabled>
+        Name:
+        <input type="text" [(ngModel)]="employee.name" name="name" id = "name" >
+        Salary:
+        <input type="number" [(ngModel)]="employee.balance" name="Amount" id = "Amount" > 
+        <input type="button" (click)="updateWalletById()" value="Update">
+    
+        <div *ngIf="msg" class="alert alert-success">
+            <p class="">{{msg}}</p>
+        </div>
+        <div *ngIf="errorMsg" class="alert alert-danger">
+            <p>{{errorMsg}}</p> 
+        </div>
+</form>
+     

@@ -1,0 +1,133 @@
+ <p>registration works!</p>
+<div class="container">
+    <h1>Register New Wallet</h1>
+    <form #userForm="ngForm">
+   
+        <div class="row">
+      <div class="col-25">
+        <label for="id">Id:</label>
+      </div>
+      <div class="col-75">
+        <input type="number" [(ngModel)]="employee.id" #idRef="ngModel" name="eid" id="eid" min=0
+          title="Enter positve id value" required>
+        <div *ngIf="idRef.invalid && (idRef.touched || idRef.dirty)">
+          <p *ngIf="idRef.errors?.['required']" class="text-danger">Id is required, cant be balnk.</p>
+          <p *ngIf="idRef.errors?.['min']" class="text-danger">Id must be positve.</p>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <div class="row">
+        <div class="col-25">
+          <label for="ename">Name:</label>
+  
+        </div>
+        <div class="col-75">
+          <input type="text" [(ngModel)]="employee.name" #nameRef="ngModel" name="ename" id="ename"
+            pattern="[A-Za-z ]{3,}" title="Only chars are allowed,Min 3 char required" required>
+          <div *ngIf="nameRef.invalid && (nameRef.touched || nameRef.dirty)">
+            <p *ngIf="nameRef.errors?.['required']" class="text-danger">Name is required, cant be balnk.</p>
+            <p *ngIf="nameRef.errors?.['pattern']" class="text-danger">Name must have at least 3 chars, only chars are
+              allowed.</p>
+          </div>
+        </div>
+  
+      </div>
+  
+      <div class="row">
+  
+        <div class="col-25">
+          <label for="AmountId">Amount:</label>
+        </div>
+  
+        <div class="col-75">
+          <input type="number" [(ngModel)]="employee.balance" #AmountRef="ngModel" name="Amount" id="AmountId" min=0
+            required>
+  
+          <div *ngIf="AmountRef.invalid && (AmountRef.touched || AmountRef.dirty)">
+            <p *ngIf="AmountRef.errors?.['required']" class="text-danger">Amount is required, cant be balnk.</p>
+            <p *ngIf="AmountRef.errors?.['min']" class="text-danger">Amount must be positive.</p>
+  
+          </div>
+        </div>
+  
+      </div>
+  
+      <div class="row">
+        <input type="submit" (click)="onSubmit()" [disabled]="!userForm.valid" value="Submit">
+      </div>
+    </form>
+     
+  </div> 
+
+
+  <!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600' rel='stylesheet' type='text/css'>
+  <link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
+  
+  <div class="testbox" > -->
+
+
+    <!-- class="container"
+    <h1>Register New Wallet</h1>
+  
+    <form #userForm="ngForm">
+        <hr>
+      <div class="accounttype">
+        <input type="radio" value="None" id="radioOne" name="account" checked/>
+        <label for="radioOne" class="radio" chec>Personal</label>
+        <input type="radio" value="None" id="radioTwo" name="account" />
+        <label for="radioTwo" class="radio">Company</label>
+      </div><hr>
+    <label id="icon" for="name "><i class="icon-envelope "></i></label>
+    <div class="row">
+      <div class="col-25">
+        <label for="id">Id: </label></div>
+      <div class="col-75">
+        <input type="number" [(ngModel)]="employee.id" #idRef="ngModel" name="eid" id="eid" min=0
+          title="Enter positve id value" required>
+        <div *ngIf="idRef.invalid && (idRef.touched || idRef.dirty)">
+          <p *ngIf="idRef.errors?.['required']" class="text-danger">Id is required, cant be balnk.</p>
+          <p *ngIf="idRef.errors?.['min']" class="text-danger">Id must be positve.</p>
+        </div> </div></div>
+    <label id="icon" for="name"><i class="icon-user"></i></label>
+    <div class="row">
+      <div class="col-25">
+        <label for="ename">Name:  </label>
+      </div>
+      <div class="col-75">
+        <input type="text" [(ngModel)]="employee.name" #nameRef="ngModel" name="ename" id="ename"
+          pattern="[A-Za-z ]{3,}" title="Only chars are allowed,Min 3 char required" required>
+        <div *ngIf="nameRef.invalid && (nameRef.touched || nameRef.dirty)">
+          <p *ngIf="nameRef.errors?.['required']" class="text-danger">Name is required, cant be balnk.</p>
+          <p *ngIf="nameRef.errors?.['pattern']" class="text-danger">Name must have at least 3 chars, only chars are
+            allowed.</p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="AmountId">Amount:  </label>
+      </div>
+      <div class="col-75">
+        <input type="number" [(ngModel)]="employee.balance" #AmountRef="ngModel" name="Amount" id="AmountId" min=0
+          required>
+        <div *ngIf="AmountRef.invalid && (AmountRef.touched || AmountRef.dirty)">
+          <p *ngIf="AmountRef.errors?.['required']" class="text-danger">Amount is required, cant be balnk.</p>
+          <p *ngIf="AmountRef.errors?.['min']" class="text-danger">Amount must be positive.</p>
+        </div>
+      </div>
+    </div>
+    <div class="gender">
+      <input type="radio" value="None" id="male" name="gender" checked/>
+      <label for="male" class="radio" chec>Male</label>
+      <input type="radio" value="None" id="female" name="gender" />
+      <label for="female" class="radio">Female</label>
+     </div> 
+     <div class="row">
+      <input type="submit" (click)="onSubmit()" [disabled]="!userForm.valid" value="Submit">
+    </div>
+  </form>
+  </div> -->
