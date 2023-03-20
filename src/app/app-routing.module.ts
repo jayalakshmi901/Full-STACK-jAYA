@@ -8,6 +8,8 @@ import { DisplayWalletComponent } from './components/display-wallet/display-wall
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegistrationComponent } from './components/registration/registration.component';
+import { AddfundsComponent } from './components/addfunds/addfunds.component';
+import { WithdrawFundComponent } from './components/withdraw-fund/withdraw-fund.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' }, 
@@ -18,7 +20,10 @@ const routes: Routes = [
   { path: 'details/:name', component: DetailsComponent},
   { path: 'employees', component: DisplayWalletComponent },
   { path: 'update/:id', component: UpdatewalletComponent },
-  { path: '**', component: PageNotFoundComponent}
+  {path: 'addfunds', component:AddfundsComponent},
+  {path: 'withdrawFund', component:WithdrawFundComponent},
+
+  { path: '**', component: PageNotFoundComponent},
 
 ];
 

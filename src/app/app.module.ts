@@ -15,6 +15,9 @@ import { UpperPipe } from './pipes/upper.pipe';
 import { SortPipe } from './pipes/sort.pipe';
 import {HttpClientModule} from '@angular/common/http';
 import { UpdatewalletComponent } from './components/updatewallet/updatewallet.component';
+import { AddfundsComponent } from './components/addfunds/addfunds.component';
+import { WithdrawFundComponent } from './components/withdraw-fund/withdraw-fund.component';
+import { TransferFundComponent } from './components/transfer-fund/transfer-fund.component';
 
 
 @NgModule({
@@ -31,6 +34,9 @@ import { UpdatewalletComponent } from './components/updatewallet/updatewallet.co
     UpperPipe,
     SortPipe,
     UpdatewalletComponent,
+    AddfundsComponent,
+    WithdrawFundComponent,
+    TransferFundComponent,
     
   ],
   imports: [

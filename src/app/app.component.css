@@ -122,12 +122,12 @@ body {
     display: flex;
     justify-content: center;
   }
-  .class1{
+  /* .class1{
     background-image: url("../assets/images/OIP.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-}
+} */
   
   
   section  {

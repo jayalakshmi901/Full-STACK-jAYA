@@ -31,5 +31,16 @@ export class WalletBackendService {
     return this.httpClient.put("http://localhost:8090/v1/wallet/",employee);
   
 }
+addFunds(id?:number,balance?:number):Observable<any>{
+  return this.httpClient.patch("http://localhost:8010/v1/wallet/addFund/"+id+"?balance="+balance,Wallet);
+  
+}
+withdrawFunds(id?:number,balance?:number):Observable<any>{
+  return this.httpClient.patch("http://localhost:8010/v1/wallet/withdrawFund/"+id+"?balance="+balance,Wallet)
+}
+
+tranferFunds(fromId?:number,toId?:number, balance?:number):Observable<any>{
+  return this.httpClient.patch("http://localhost:8010/v1/wallet/tranferFunds/{fromId}/{toId}?fromId="+fromId+"&toId="+toId+"&amount="+balance,Wallet);
+}
 
 }
